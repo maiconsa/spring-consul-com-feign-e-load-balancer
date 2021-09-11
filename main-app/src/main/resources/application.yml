@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: main-app
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        health-check-path: /actuator/health
+        health-check-interval: 1s
+    
+          
+        
+
