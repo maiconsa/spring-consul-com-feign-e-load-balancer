@@ -2,11 +2,11 @@ package com.consul.main;
 
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainAppApplication {
 
+	private static final Logger logger = LoggerFactory.getLogger(MainAppApplication.class);
 	
 	@Autowired
 	private BuscarDetalhesService buscarDetalheService;
@@ -27,7 +28,10 @@ public class MainAppApplication {
 	
 	@GetMapping("/details")
 	public Map<String,Object> detalhesAplicacao() {
-		return buscarDetalheService.buscaDetalhe();
+		
+		Map<String,Object>  response = buscarDetalheService.buscaDetalhe();
+		logger.debug("Response requisição app-service/details : " + response.toString());
+		return  response;
 	}
 
 }

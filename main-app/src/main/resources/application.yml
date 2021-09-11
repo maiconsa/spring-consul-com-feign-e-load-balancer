@@ -10,7 +10,7 @@ spring:
       discovery:
         health-check-path: /actuator/health
         health-check-interval: 1s
+
     
-          
         
 
