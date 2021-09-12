@@ -7,6 +7,12 @@ Consiste de uma biblioteca presente no ecossistema Spring responsável por Servi
 ## Por que utilizar Service Discovery?
  Através do uso de service discovery é possível identificar o endereço e porta de uma aplicação  simplesmente sabendo o nome do serviço dela registrado no servidor Consul. Logo, simplifica o processo de descoberta e requisição de um recurso  em um ambiente de microserviços complexo e com muitas aplicação  sendo executadas.Dessa maneira, quando se pretende trabalhar com LoadBalancer se torna essencial para a fácil identificação e balanceamento das requisições.
 
+## Por que utilizar LoadBalancer?
+Essencial para garantir alta performance e rapidez ao trabalhar com muitas requisições. O LoadBalancer é responsável por realizar o balanceamento e distruição da requisições entre as aplicações em execuções de acordo com o tipo do recurso e nome do serviço.
+
+## Por que utilizar Feign?
+Pois ele permite declarar requisições de uma maneira fácil,rápida e ainda permite trabalhar com nome de serviços registrado em um Service Discovery Consul por exemplo.
+
 ##  O será que utilizado de exemplo?
 
 O servidor de registros de aplicações utilizado é o Consul, para nosso exemplo foi utilizado uma imagem docker Consul, mais detalhes em https://hub.docker.com/_/consul, rodando na porta 8500.
